@@ -234,14 +234,14 @@ async function confirmDate() {
 
         await sendNotification(finalData);
 
+        saveData({
+            notificationSent: true
+        });
+
         if (error) {
             error.textContent =
                 "Confirmed successfully ❤️";
         }
-
-        setTimeout(() => {
-            window.location.href = "success.html";
-        }, 500);
 
     } catch (errorObject) {
 
@@ -250,17 +250,19 @@ async function confirmDate() {
             errorObject
         );
 
-        if (button) {
-            button.disabled = false;
-            button.textContent =
-                "This sounds perfect ♡";
-        }
+        saveData({
+            notificationSent: false
+        });
 
         if (error) {
             error.textContent =
-                "Could not send confirmation. Please try again.";
+                "Confirmed ❤️ Opening your summary...";
         }
     }
+
+    setTimeout(() => {
+        window.location.href = "success.html";
+    }, 500);
 }
 
 
@@ -284,6 +286,17 @@ if (summary) {
         ⏰ <b>${escapeHtml(data.time || "-")}</b><br>
         🍽️ <b>${escapeHtml(foods)}</b>
     `;
+
+    const emailStatus =
+        document.getElementById("emailStatus");
+
+    if (
+        emailStatus &&
+        data.notificationSent === false
+    ) {
+        emailStatus.textContent =
+            "Your choices were saved, but the email notification could not be delivered.";
+    }
 }
 
 
