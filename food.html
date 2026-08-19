@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Food 🍕</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="ambient"></div>
+
+<main class="screen">
+
+<section class="glass food-card">
+
+<div class="progress">03 / 04</div>
+
+<div class="label">
+THE IMPORTANT PART
+</div>
+
+<h1>
+What shall we<br>
+<i>eat together?</i> 🍽️
+</h1>
+
+<p class="lead">
+Choose as many as you like.
+</p>
+
+<div class="food-grid">
+
+<button class="food" data-food="Chowmein">
+<img src="chowmin.jpg" alt="Chowmein">
+<b>Chowmein</b>
+</button>
+
+<button class="food" data-food="Momos">
+<img src="momos.jpg" alt="Momos">
+<b>Momos</b>
+</button>
+
+<button class="food" data-food="Burger">
+<img src="burger.jpg" alt="Burger">
+<b>Burger</b>
+</button>
+
+<button class="food" data-food="Pizza">
+<img src="pizza.jpg" alt="Pizza">
+<b>Pizza</b>
+</button>
+
+<button class="food" data-food="Ice cream">
+<img src="icecream.jpg" alt="Ice Cream">
+<b>Ice Cream</b>
+</button>
+
+<button class="food" data-food="Main course">
+<img src="maincourse.jpg" alt="Main Course">
+<b>Main Course</b>
+</button>
+
+</div>
+
+<button class="primary wide" onclick="confirmDate()">
+This sounds perfect ♡
+</button>
+
+<p id="error"></p>
+
+</section>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>
